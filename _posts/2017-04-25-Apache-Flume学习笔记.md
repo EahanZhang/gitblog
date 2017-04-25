@@ -40,7 +40,9 @@ $sudo mkdir /usr/java
 $sudo tar zxvf jdk-8u121-linux-x64.tar.gz -C /usr/java
 ```
 2. 配置java环境变量
+
 `$sudo vi /etc/profile`
+
 添加如下内容：
 ```
 # set java environment
