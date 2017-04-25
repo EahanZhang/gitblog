@@ -35,19 +35,21 @@ Flume NG : Flume New Generation.
 
 ### 安装Java
 1. 从[Oracle官网](http://www.oracle.com/technetwork/java/javase/downloads/jdk8-downloads-2133151.html)上下载JDK安装包，解压安装：
-`$sudo mkdir /usr/java`
-`$sudo tar zxvf jdk-8u121-linux-x64.tar.gz -C /usr/java`
-
+```
+$sudo mkdir /usr/java
+$sudo tar zxvf jdk-8u121-linux-x64.tar.gz -C /usr/java
+```
 2. 配置java环境变量
 `$sudo vi /etc/profile`
 添加如下内容：
-`# set java environment`
-`JAVA_HOME=/usr/java/jdk1.8.0_121`
-`JRE_HOME=/usr/java/jdk1.8.0_121/jre`
-`CLASS_PATH=.:$JAVA_HOME/lib/dt.jar:$JAVA_HOME/lib/tools.jar:$JRE_HOME/lib`
-`PATH=$PATH:$JAVA_HOME/bin:$JRE_HOME/bin`
-`export JAVA_HOME JRE_HOME CLASS_PATH PATH`
-
+```
+# set java environment
+JAVA_HOME=/usr/java/jdk1.8.0_121
+JRE_HOME=/usr/java/jdk1.8.0_121/jre
+CLASS_PATH=.:$JAVA_HOME/lib/dt.jar:$JAVA_HOME/lib/tools.jar:$JRE_HOME/lib
+PATH=$PATH:$JAVA_HOME/bin:$JRE_HOME/bin
+export JAVA_HOME JRE_HOME CLASS_PATH PATH
+```
 3. 让修改生效
 `$source /etc/profile`
 
