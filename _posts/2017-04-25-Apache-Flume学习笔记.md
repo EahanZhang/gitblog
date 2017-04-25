@@ -40,9 +40,9 @@ $sudo mkdir /usr/java
 $sudo tar zxvf jdk-8u121-linux-x64.tar.gz -C /usr/java
 ```
 2. 配置java环境变量
-
-`$sudo vi /etc/profile`
-
+```
+$sudo vi /etc/profile
+```
 添加如下内容：
 ```
 # set java environment
@@ -57,14 +57,17 @@ export JAVA_HOME JRE_HOME CLASS_PATH PATH
 
 ### 安装Flume
 将下载好的二进制包解压缩并改名:
-`$sudo tar zxvf apache-flume-1.7.0-bin.tar.gz -C /usr/local/`
-`$cd /usr/local`
-`$sudo mv apache-flume-1.7.0-bin/ flume/`
-
+``
+$sudo tar zxvf apache-flume-1.7.0-bin.tar.gz -C /usr/local/
+$cd /usr/local
+$sudo mv apache-flume-1.7.0-bin/ flume/
+```
 ### 配置Flume
 在flume目录下创建一个example.conf的文件
-`cd flume`
-`sudo vim example.conf`
+```
+cd flume
+sudo vim example.conf
+```
 在该文件中添加以下内容：
 ```
 # example.conf: A single-node Flume configuration
@@ -95,18 +98,25 @@ a1.sinks.k1.channel = c1
 
 ### 运行Flume
 配置完成后使用下面的命令运行Flume:
-`$sudo /usr/local/flume/bin/flume-ng agent --conf conf --conf-file /usr/local/flume/example.conf --name a1 -Dflume.root.logger=INFO,console`
+```
+$sudo /usr/local/flume/bin/flume-ng agent --conf conf --conf-file /usr/local/flume/example.conf --name a1 -Dflume.root.logger=INFO,console
+```
 运行上述命令后打开一个新的终端来测试Flume
-`$telnet localhost 44444`
-`Trying 127.0.0.1...
+```
+$telnet localhost 44444
+Trying 127.0.0.1...
+
 Connected to localhost.localdomain (127.0.0.1).
 Escape character is '^]'.
 Hello world! <ENTER>
-OK`
+OK
+```
 运行Flume的终端上将会输出信息：
-`17/04/17 15:32:19 INFO source.NetcatSource: Source starting`
-`17/04/17 15:32:19 INFO source.NetcatSource: Created serverSocket:sun.nio.ch.ServerSocketChannelImpl[/127.0.0.1:44444]`
-`17/04/17 15:32:34 INFO sink.LoggerSink: Event: { headers:{} body: 48 65 6C 6C 6F 20 77 6F 72 6C 64 21 0D          Hello world!. }`
+```
+17/04/17 15:32:19 INFO source.NetcatSource: Source starting
+17/04/17 15:32:19 INFO source.NetcatSource: Created serverSocket:sun.nio.ch.ServerSocketChannelImpl[/127.0.0.1:44444]
+17/04/17 15:32:34 INFO sink.LoggerSink: Event: { headers:{} body: 48 65 6C 6C 6F 20 77 6F 72 6C 64 21 0D          Hello world!. }
+```
 Flume配置、运行成功。
 
 ## 参考
