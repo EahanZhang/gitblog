@@ -5,8 +5,11 @@ title: Apache Flume学习笔记
 
 ## 什么是Flume?
 Flume是Cloudera提供的一个高可用的，高可靠的，分布式的海量日志采集、聚合和传输的系统，目前已经是Apache的一个子项目其设计的原理也是基于将数据流，如日志数据从各种网站服务器上汇集起来存储到HDFS，HBase等集中存储器中。其结构如下图所示：
+
 ![](http://images2015.cnblogs.com/blog/539316/201607/539316-20160710192339483-1093743457.jpg)
+
 盗图，侵删。
+
 ## Flume OG 
 Flume OG : Flume Original Generation, 初代Flume。由三种角色构成：代理点Agent, 收集节点Collector, 主节点Master。
 - Agent：从各个数据源收集日志数据， 将收集到的数据几种到Collector，然后由Collector汇总存入HDFS。
