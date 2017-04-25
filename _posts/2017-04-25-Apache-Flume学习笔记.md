@@ -53,11 +53,12 @@ PATH=$PATH:$JAVA_HOME/bin:$JRE_HOME/bin
 export JAVA_HOME JRE_HOME CLASS_PATH PATH
 ```
 3. 让修改生效
-`$source /etc/profile`
-
+```
+$source /etc/profile
+```
 ### 安装Flume
 将下载好的二进制包解压缩并改名:
-``
+```
 $sudo tar zxvf apache-flume-1.7.0-bin.tar.gz -C /usr/local/
 $cd /usr/local
 $sudo mv apache-flume-1.7.0-bin/ flume/
